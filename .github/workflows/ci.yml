@@ -144,7 +144,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "g++"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "5.0"
             toolset: "clang-5.0"
             cxxstd: "03,11,14,17"
@@ -155,7 +155,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "g++"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "6.0"
             toolset: "clang-6.0"
             cxxstd: "03,11,14,17,2a"
@@ -166,7 +166,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "g++"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "6.0"
             toolset: "clang-6.0"
             cxxstd: "03,11,14,17,2a"
@@ -217,7 +217,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "g++"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "6.0"
             comment: "valgrind"
             toolset: "clang-6.0"
@@ -268,6 +268,7 @@ jobs:
           TESTFLAGS: ${{ matrix.testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
           TRAVIS_BRANCH: ${{ github.base_ref }}
+          TRAVIS_OS_NAME: "linux"
         run: |
           echo '==================================> SETUP'
           if [ -n "$GHA_CONTAINER" ]; then
